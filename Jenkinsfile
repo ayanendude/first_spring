@@ -83,7 +83,7 @@ sh "echo env"
         },
         "2 Test": {
             sh "echo 2 Test"
-			sh "sleep 7"
+			sh "sleep 5"
         },
       )
     }
