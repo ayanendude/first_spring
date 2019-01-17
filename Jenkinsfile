@@ -1,5 +1,4 @@
-//node('master') {
-  agent { label 'docker_spr1'} {
+node('master') {
 stage ('Start'){}
 
     stage('DEV') {
