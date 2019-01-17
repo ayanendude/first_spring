@@ -3,6 +3,7 @@ node('master') {
 stage ('Start'){}
 
     stage('DEV') {
+        agent { label 'docker_spr1'}
         sh "echo Build"
 		sh "pwd"
 		sh "touch abc"
