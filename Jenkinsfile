@@ -1,4 +1,4 @@
-node('docker_spr1') {
+node('dockerspr1') {
  
 
     stage 'Build & UnitTest'
