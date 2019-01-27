@@ -3,5 +3,5 @@ node('dockerspr1') {
  
 
     stage ('Build'){
-        sh "1"}
+        sh "echo 1"}
   }
