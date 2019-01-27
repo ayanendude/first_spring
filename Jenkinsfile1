@@ -1,4 +1,4 @@
-node('docker_spr1') {
+node('dockerspr1') {
 stage ('Start'){}
 
     stage('DEV') {
@@ -7,7 +7,7 @@ stage ('Start'){}
 		sh "pwd"
 		sh "touch abc"
 		parallel (
-        "TRS Build": {
+        "1 Build": {
 		//build 'jenkins_build'
 		stage ('Test'){ echo "TEST"}
 		//test stage

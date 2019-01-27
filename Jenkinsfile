@@ -1,19 +1,23 @@
-
-node('dockerspr1') {
-
-    stage ('Build'){
-        sh "sleep 1"
-        sh "echo 1"
-        //mvn
+pipeline {
+    agent ('dockerspr1')
+    tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
     }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    //echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
 
-    stage ('test'){
-        parallel 2:{
-        sh "sleep 2"
-        sh "echo 2"
-        }, 3:{
-        sh "sleep 3"
-        sh "echo 3"
+        stage ('Build') {
+            steps {
+                echo 'This is a minimal pipeline.'
+            }
         }
     }
 }
