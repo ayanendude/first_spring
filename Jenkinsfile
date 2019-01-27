@@ -4,7 +4,7 @@ node('dockerspr1') {
     stage ('Build'){
         sh "sleep 1"
         sh "echo 1"
-        mvn
+        //mvn
     }
 
     stage ('test'){
