@@ -1,6 +1,7 @@
+
 node('dockerspr1') {
  
 
-    stage 'Build'{
+    stage ('Build'){
         sh "1"}
   }
