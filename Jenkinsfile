@@ -1,13 +1,15 @@
 
 node('dockerspr1') {
 
+    stage ('Clone') {
+        git url: 'https://github.com/ayanendude/first_spring.git'
+    }
+
     stage ('Build'){
         sh "sleep 1"
         sh "echo 1"
         //mvn
-    }
-    stage ('Clone') {
-        git url: 'https://github.com/ayanendude/first_spring.git'
+        sh "mvn clean install"
     }
 
     stage ('test'){
