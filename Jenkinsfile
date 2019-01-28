@@ -1,5 +1,5 @@
 
-node('dockerspr1') {
+node('docker_mvn') {
 
     stage ('Clone') {
         git url: 'https://github.com/ayanendude/first_spring.git'
