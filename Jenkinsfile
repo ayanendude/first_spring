@@ -22,17 +22,12 @@ node('docker_mvn') {
         sh "echo 3"
         }, SonarQube:{
 
-        withSonarQubeEnv('Sonar') {
-          sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar ' +
-          '-f all/pom.xml ' +
-          '-Dsonar.projectKey=com.huettermann:all:master ' +
-          '-Dsonar.login=$SONAR_UN ' +
-          '-Dsonar.password=$SONAR_PW ' +
-          '-Dsonar.language=java ' +
-          '-Dsonar.sources=. ' +
-          '-Dsonar.tests=. ' +
-          '-Dsonar.test.inclusions=**/*Test*/** ' +
-          '-Dsonar.exclusions=**/*Test*/**'
+        withSonarQubeEnv('Sonar1') {
+          sh 'mvn sonar:sonar \
+                -Dsonar.projectKey=ayanendude_first_spring \
+                -Dsonar.organization=ayanendude-github \
+                -Dsonar.host.url=https://sonarcloud.io \
+                -Dsonar.login=f538d1cdfae15608808898a0437676e813b9bbee'
         }
 
         }
