@@ -23,7 +23,7 @@ node('docker_mvn') {
         }, SonarQube:{
 
         withSonarQubeEnv('Sonar1') {
-          sh 'mvn sonar:sonar \
+          sh 'mvn clean package sonar:sonar \
                 -Dsonar.projectKey=ayanendude_first_spring \
                 -Dsonar.organization=ayanendude-github \
                 -Dsonar.host.url=https://sonarcloud.io \
