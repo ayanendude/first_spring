@@ -1,6 +1,6 @@
 
 node('docker_mvn') {
-
+withEnv(['MAVEN_OPTS=Xms256M Xmx2048M']){
     stage ('Checkout') {
         git url: 'https://github.com/ayanendude/first_spring.git'
     }
@@ -31,5 +31,5 @@ node('docker_mvn') {
         }
 
         }
-    }
+    }}
 }
